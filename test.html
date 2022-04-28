@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div>
+        <canvas id="myChart" width="365" height="129"></canvas>
+    </div>
+
+</body>
+
+<script>
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['1학년1학기', '1학년2학기', '2학년1학기', '2학년2학기', '3학년1학기', '3학년2학기', '4학년1학기', '4학년2학기'],
+            datasets: [{
+                label: '전체',
+                data: [3.63, 1.88, 1.89, 2.92, 3.6, 4, 3.3, 4.2],
+                backgroundColor: 'white',
+                borderColor: '#C62917',
+                borderWidth: 2,
+                pointRadius: 4,
+                hoverRadius: 6,
+                hoverBackgroundColor: '#C62917'
+            },
+            {
+                label: '전공',
+                data: [4.25, 2.5, 2.14, 3, 3.6, 4, 3.3, 4.5],
+                backgroundColor: 'white',
+                borderColor: '#d6d6d6',
+                borderWidth: 2,
+                pointRadius: 4,
+                hoverRadius: 6,
+                hoverBackgroundColor: '#d6d6d6'
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    min: 1.0,
+                    max: 4.5
+                }
+            }
+        }
+    });
+</script>
+
+</html>
